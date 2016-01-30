@@ -10,7 +10,7 @@
 #import "HomeTableViewCell.h"
 #import "PersonakInfoViewController.h"
 #import "PSTAlertController.h"
-
+#import "EstimateTimeChoose.h"
 @interface ViewControllers ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIAlertViewDelegate,HomeTableViewCellDelegate>
 
 {
@@ -102,7 +102,13 @@
 }
 //登录
 - (IBAction)LogInBtnClick:(UIButton *)sender {
-    
+//    EstimateTimeChoose *view = [EstimateTimeChoose defaultPopupView];
+//    view.parentVC = self;
+////    view.delegate = self;
+//    [self lew_presentPopupView:view animation:[LewPopupViewAnimationFade new] dismissed:^{
+//        NSLog(@"动画结束");
+//    }];
+
     //
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];

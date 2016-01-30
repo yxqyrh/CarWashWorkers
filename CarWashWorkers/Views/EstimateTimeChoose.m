@@ -1,19 +1,17 @@
 //
-//  WashStyleChoose.m
-//  MayiCar
+//  EstimateTimeChoose.m
+//  CarWashWorkers
 //
-//  Created by xiejingya on 9/27/15.
-//  Copyright (c) 2015 xiejingya. All rights reserved.
+//  Created by jingyaxie on 16/1/30.
+//  Copyright © 2016年 ShiZhi. All rights reserved.
 //
 
-#import "TransferChoose.h"
-//#import "CommonMacro.h"
-#import "WashType.h"
-
-
-
-@implementation TransferChoose
-
+#import "EstimateTimeChoose.h"
+@interface EstimateTimeChoose(){
+    NSMutableArray *dataArray;
+}
+@end
+@implementation EstimateTimeChoose
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -31,52 +29,29 @@
         [self addSubview:_innerView];
         
     }
+    dataArray = [[NSMutableArray alloc]initWithObjects:@"10分钟",@"25分钟",@"40分钟",@"60分钟",@"90分钟",@"大于120分钟", nil];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    _current_seleted_row =-1;
     return self;
-}
-- (IBAction)cancel:(id)sender {
-    
- 
- [_parentVC lew_dismissPopupViewWithanimation:[LewPopupViewAnimationFade new]];
-}
-- (IBAction)ok:(id)sender {
-    if (_current_seleted_row==-1) {
-         [self makeToast:@"请选择要转让的洗车工"];
-        return;
-    }
-    if (_delegate != nil && [_delegate conformsToProtocol:@protocol(TransferChooseDelegate)]) { // 如果协议响应了sendValue:方法
-        // 通知执行协议方法
-        [_delegate selectWorker:_current_seleted_row];
-        [_parentVC lew_dismissPopupViewWithanimation:[LewPopupViewAnimationFade new]];
-    }
 }
 
 + (instancetype)defaultPopupView{
-    return [[TransferChoose alloc]initWithFrame:CGRectMake(0, 0, POP_WIDTH, 310)];
+    return [[EstimateTimeChoose alloc]initWithFrame:CGRectMake(0, 0, POP_WIDTH, 360)];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *cellIdentifier = @"TransferCell";
+    NSString *cellIdentifier = @"CommonSingleChooseCell";
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell==nil) {
-        cell= [[[NSBundle mainBundle]loadNibNamed:@"TransferCell" owner:nil options:nil] firstObject];
+        cell= [[[NSBundle mainBundle]loadNibNamed:@"CommonSingleChooseCell" owner:nil options:nil] firstObject];
     }
-        
-    UIView *view = [cell viewWithTag:10];
-    view.layer.borderColor = GeneralLineCGColor;
-    view.layer.borderWidth = 0.5;
-        
-    NSDictionary *dic = [_workers objectAtIndex:indexPath.row];
     UILabel *title = [cell viewWithTag:1];
-
-    title.text = [dic objectForKey:@"gname"];
+    title.text = dataArray[indexPath.row];
     UIImageView *image = [cell viewWithTag:2];
     if (indexPath.row == _current_seleted_row) {
         [image setImage:[UIImage imageNamed:@"selected"]];
@@ -84,7 +59,6 @@
         [image setImage:[UIImage imageNamed:@"unselected"]];
     }
     return cell;
-
     
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -100,21 +74,18 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(_workers == nil)
-    {
-        return 0;
-    }
-    return  _workers.count;
+ 
+    return  dataArray.count;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-        return 44;
-
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     _current_seleted_row = indexPath.row;
-    [_tableView reloadData];
+    
+    
+    _current_seleted_row = indexPath.row;
+    if (_delegate != nil && [_delegate conformsToProtocol:@protocol(EstimateTimeChooseDelegate)]) { // 如果协议响应了sendValue:方法
+        // 通知执行协议方法
+        
+        [_delegate setEstimateTimeChooseValue:indexPath.row];
+        [_parentVC lew_dismissPopupViewWithanimation:[LewPopupViewAnimationFade new]];
+    }
 }
 @end

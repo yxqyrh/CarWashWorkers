@@ -110,6 +110,9 @@
 		0FDDF5DC1BC7B55A00AAA298 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDDF5DB1BC7B55A00AAA298 /* Default-568h@2x.png */; };
 		0FDFEE3D1B7B901500ED2DD2 /* LjjUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFEE3C1B7B901500ED2DD2 /* LjjUISegmentedControl.m */; };
 		0FDFEE3E1B7B901500ED2DD2 /* LjjUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFEE3C1B7B901500ED2DD2 /* LjjUISegmentedControl.m */; };
+		3F1ACF231C5CEF67000A0DF6 /* EstimateTimeChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1ACF221C5CEF67000A0DF6 /* EstimateTimeChoose.m */; };
+		3F1ACF251C5CEF94000A0DF6 /* EstimateTimeChoose.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1ACF241C5CEF94000A0DF6 /* EstimateTimeChoose.xib */; };
+		3F1ACF281C5CF21A000A0DF6 /* CommonSingleChooseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1ACF271C5CF21A000A0DF6 /* CommonSingleChooseCell.xib */; };
 		4437B5B61C57C0B20097EEC5 /* TransferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4437B5B21C57C0B20097EEC5 /* TransferCell.xib */; };
 		4437B5B71C57C0B20097EEC5 /* TransferChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 4437B5B41C57C0B20097EEC5 /* TransferChoose.m */; };
 		4437B5B81C57C0B20097EEC5 /* TransferChoose.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4437B5B51C57C0B20097EEC5 /* TransferChoose.xib */; };
@@ -305,6 +308,10 @@
 		0FDDF5DB1BC7B55A00AAA298 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0FDFEE3B1B7B901500ED2DD2 /* LjjUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjUISegmentedControl.h; sourceTree = "<group>"; };
 		0FDFEE3C1B7B901500ED2DD2 /* LjjUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjUISegmentedControl.m; sourceTree = "<group>"; };
+		3F1ACF211C5CEF67000A0DF6 /* EstimateTimeChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateTimeChoose.h; sourceTree = "<group>"; };
+		3F1ACF221C5CEF67000A0DF6 /* EstimateTimeChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateTimeChoose.m; sourceTree = "<group>"; };
+		3F1ACF241C5CEF94000A0DF6 /* EstimateTimeChoose.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstimateTimeChoose.xib; sourceTree = "<group>"; };
+		3F1ACF271C5CF21A000A0DF6 /* CommonSingleChooseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonSingleChooseCell.xib; sourceTree = "<group>"; };
 		4437B5B21C57C0B20097EEC5 /* TransferCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferCell.xib; sourceTree = "<group>"; };
 		4437B5B31C57C0B20097EEC5 /* TransferChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferChoose.h; sourceTree = "<group>"; };
 		4437B5B41C57C0B20097EEC5 /* TransferChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferChoose.m; sourceTree = "<group>"; };
@@ -401,6 +408,7 @@
 		0F4BB6BD1B83294700E9B845 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F1ACF261C5CF1D6000A0DF6 /* cell */,
 				4437B5B21C57C0B20097EEC5 /* TransferCell.xib */,
 				4437B5B91C58BE8F0097EEC5 /* TransferOperationCell.xib */,
 				4437B5B31C57C0B20097EEC5 /* TransferChoose.h */,
@@ -412,6 +420,9 @@
 				449D29AA1C54C2D30057033F /* CarNumChooseCell.xib */,
 				4475ABFC1C54B77600F98099 /* WashType.h */,
 				4475ABFD1C54B77600F98099 /* WashType.m */,
+				3F1ACF211C5CEF67000A0DF6 /* EstimateTimeChoose.h */,
+				3F1ACF221C5CEF67000A0DF6 /* EstimateTimeChoose.m */,
+				3F1ACF241C5CEF94000A0DF6 /* EstimateTimeChoose.xib */,
 				0FCF8D771B856FB800364518 /* FirstViews */,
 				0F4BB6BE1B8329AF00E9B845 /* SecondViews */,
 				0FCF8D6A1B85629600364518 /* ThirdViews */,
@@ -843,6 +854,14 @@
 			path = LjjUISegmentedControl;
 			sourceTree = "<group>";
 		};
+		3F1ACF261C5CF1D6000A0DF6 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				3F1ACF271C5CF21A000A0DF6 /* CommonSingleChooseCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		4475ABD81C5481AF00F98099 /* PSTAlertController */ = {
 			isa = PBXGroup;
 			children = (
@@ -990,12 +1009,14 @@
 				0F7F1B281B8C161600E7C3B7 /* SearchDataView.xib in Resources */,
 				4437B5BA1C58BE8F0097EEC5 /* TransferOperationCell.xib in Resources */,
 				0FC99B211BC63B60000BAA8A /* PersonakInfoViewController.xib in Resources */,
+				3F1ACF251C5CEF94000A0DF6 /* EstimateTimeChoose.xib in Resources */,
 				0FCF8D7D1B85702300364518 /* HomeTableViewCell.xib in Resources */,
 				4475ABE01C54B61C00F98099 /* WashStyleChoose.xib in Resources */,
 				0F11FA8B1B845A1C0032B847 /* HeaderView.xib in Resources */,
 				0FB2CF951B9E8AC8005063AA /* blueArrow.png in Resources */,
 				0FBB5C181B7982CB00D18487 /* Main.storyboard in Resources */,
 				4437B5B81C57C0B20097EEC5 /* TransferChoose.xib in Resources */,
+				3F1ACF281C5CF21A000A0DF6 /* CommonSingleChooseCell.xib in Resources */,
 				0FDDF5DC1BC7B55A00AAA298 /* Default-568h@2x.png in Resources */,
 				449D29AB1C54C2D30057033F /* CarNumChooseCell.xib in Resources */,
 				0FBB5C1D1B7982CB00D18487 /* LaunchScreen.xib in Resources */,
@@ -1029,6 +1050,7 @@
 				0F98C63F1BA6B19500584609 /* CAAnimation+WAnimation.m in Sources */,
 				4475ABF71C54B68300F98099 /* LewPopupViewAnimationSlide.m in Sources */,
 				0F7AC9881B9D204E000DD4B4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				3F1ACF231C5CEF67000A0DF6 /* EstimateTimeChoose.m in Sources */,
 				0F7AC98D1B9D204E000DD4B4 /* UIRefreshControl+AFNetworking.m in Sources */,
 				0F7AC98A1B9D204E000DD4B4 /* UIButton+AFNetworking.m in Sources */,
 				0F7AC9891B9D204E000DD4B4 /* UIAlertView+AFNetworking.m in Sources */,
