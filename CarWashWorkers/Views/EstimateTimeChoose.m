@@ -37,7 +37,7 @@
 }
 
 + (instancetype)defaultPopupView{
-    return [[EstimateTimeChoose alloc]initWithFrame:CGRectMake(0, 0, POP_WIDTH, 360)];
+    return [[EstimateTimeChoose alloc]initWithFrame:CGRectMake(0, 0, POP_WIDTH-40, 360)];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -78,14 +78,19 @@
     return  dataArray.count;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
     _current_seleted_row = indexPath.row;
+    [_tableView reloadData];
+    
+}
+- (IBAction)ok:(id)sender {
     if (_delegate != nil && [_delegate conformsToProtocol:@protocol(EstimateTimeChooseDelegate)]) { // 如果协议响应了sendValue:方法
         // 通知执行协议方法
         
-        [_delegate setEstimateTimeChooseValue:indexPath.row];
+        [_delegate setEstimateTimeChooseValue:_current_seleted_row];
         [_parentVC lew_dismissPopupViewWithanimation:[LewPopupViewAnimationFade new]];
     }
+}
+- (IBAction)cancel:(id)sender {
+    [_parentVC lew_dismissPopupViewWithanimation:[LewPopupViewAnimationFade new]];
 }
 @end

@@ -129,7 +129,6 @@
 		4475ABFA1C54B68300F98099 /* NSTimer+YYFounction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4475ABF11C54B68300F98099 /* NSTimer+YYFounction.m */; };
 		4475ABFB1C54B68300F98099 /* YYCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4475ABF31C54B68300F98099 /* YYCycleScrollView.m */; };
 		4475ABFE1C54B77600F98099 /* WashType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4475ABFD1C54B77600F98099 /* WashType.m */; };
-		449D29AB1C54C2D30057033F /* CarNumChooseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 449D29AA1C54C2D30057033F /* CarNumChooseCell.xib */; };
 		44D7B77A1C58ED2700EA91A2 /* GlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B7791C58ED2700EA91A2 /* GlobalVar.m */; };
 /* End PBXBuildFile section */
 
@@ -341,7 +340,6 @@
 		4475ABF31C54B68300F98099 /* YYCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCycleScrollView.m; sourceTree = "<group>"; };
 		4475ABFC1C54B77600F98099 /* WashType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WashType.h; sourceTree = "<group>"; };
 		4475ABFD1C54B77600F98099 /* WashType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashType.m; sourceTree = "<group>"; };
-		449D29AA1C54C2D30057033F /* CarNumChooseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarNumChooseCell.xib; sourceTree = "<group>"; };
 		44D7B7781C58ED2700EA91A2 /* GlobalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVar.h; sourceTree = "<group>"; };
 		44D7B7791C58ED2700EA91A2 /* GlobalVar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -417,7 +415,6 @@
 				4475ABDC1C54B61C00F98099 /* WashStyleChoose.h */,
 				4475ABDD1C54B61C00F98099 /* WashStyleChoose.m */,
 				4475ABDE1C54B61C00F98099 /* WashStyleChoose.xib */,
-				449D29AA1C54C2D30057033F /* CarNumChooseCell.xib */,
 				4475ABFC1C54B77600F98099 /* WashType.h */,
 				4475ABFD1C54B77600F98099 /* WashType.m */,
 				3F1ACF211C5CEF67000A0DF6 /* EstimateTimeChoose.h */,
@@ -1018,7 +1015,6 @@
 				4437B5B81C57C0B20097EEC5 /* TransferChoose.xib in Resources */,
 				3F1ACF281C5CF21A000A0DF6 /* CommonSingleChooseCell.xib in Resources */,
 				0FDDF5DC1BC7B55A00AAA298 /* Default-568h@2x.png in Resources */,
-				449D29AB1C54C2D30057033F /* CarNumChooseCell.xib in Resources */,
 				0FBB5C1D1B7982CB00D18487 /* LaunchScreen.xib in Resources */,
 				0FBB5C1A1B7982CB00D18487 /* Images.xcassets in Resources */,
 			);

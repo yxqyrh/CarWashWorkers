@@ -102,12 +102,12 @@
 }
 //登录
 - (IBAction)LogInBtnClick:(UIButton *)sender {
-//    EstimateTimeChoose *view = [EstimateTimeChoose defaultPopupView];
-//    view.parentVC = self;
-////    view.delegate = self;
-//    [self lew_presentPopupView:view animation:[LewPopupViewAnimationFade new] dismissed:^{
-//        NSLog(@"动画结束");
-//    }];
+    EstimateTimeChoose *view = [EstimateTimeChoose defaultPopupView];
+    view.parentVC = self;
+//    view.delegate = self;
+    [self lew_presentPopupView:view animation:[LewPopupViewAnimationFade new] dismissed:^{
+        NSLog(@"动画结束");
+    }];
 
     //
     NSDate *now = [NSDate date];

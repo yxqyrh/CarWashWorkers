@@ -55,7 +55,7 @@
 }
 
 + (instancetype)defaultPopupView{
-    return [[TransferChoose alloc]initWithFrame:CGRectMake(0, 0, POP_WIDTH, 310)];
+    return [[TransferChoose alloc]initWithFrame:CGRectMake(0, 0, POP_WIDTH-40, 310)];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
