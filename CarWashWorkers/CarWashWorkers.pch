@@ -1,0 +1,61 @@
+//
+//  CarWashWorkers.pch
+//  CarWashWorkers
+//
+//  Created by huangchengqi on 15/8/11.
+//  Copyright (c) 2015年 ShiZhi. All rights reserved.
+//
+
+#ifndef CarWashWorkers_CarWashWorkers_pch
+#define CarWashWorkers_CarWashWorkers_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define COLOR(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define Multiple [UIScreen mainScreen].bounds.size.width/320.0
+
+#import "AFNetworking.h"//主要用于网络请求方法
+#import "UIKit+AFNetworking.h"//里面有异步加载图片的方法
+#import "NetWorking.h"//封装网络请求
+#import "Toast+UIView.h"//弹出框
+//上拉 下拉刷新
+#import "FCXRefreshFooterView.h"
+#import "FCXRefreshHeaderView.h"
+#import "UIScrollView+FCXRefresh.h"
+#import "GlobalVar.h"
+
+#import "MBProgressHUD.h"
+//SDWebImage
+#import "UIImageView+WebCache.h"
+
+#define BaseUrl  @"http://myxc.ahwdcz.com/index.php?s=/Home/Xcg/"
+#define APPKey   @"ab1ffd1cbc6cdd121679e8f00e505311"
+#define DownLoadImgUrl @"http://myxc.ahwdcz.com/Uploads/"
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+
+
+#define GeneralBackgroundColor [UIColor colorWithRed:0.94 green:0.95 blue:0.96 alpha:1]
+#define GeneralBorderColor [UIColor colorWithRed:0.94 green:0.95 blue:0.96 alpha:1].CGColor
+
+#define GeneralLineColor [UIColor colorWithRed:0.83 green:0.83 blue:0.83 alpha:1]
+#define GeneralLineCGColor [UIColor colorWithRed:0.83 green:0.83 blue:0.83 alpha:1].CGColor
+
+#define SCREEN_WIDTH                    ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT                   ([UIScreen mainScreen].bounds.size.height)
+#define POP_WIDTH                        SCREEN_WIDTH*9/10
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#    define DLog(...) /* */
+#endif
+
+//#define kAppId           @"FG6IQV7oHQAFzDNzRz73O4"
+//#define kAppKey          @"cxueGTlNfN96y8S0ymL722"
+//#define kAppSecret       @"gESxBTSxQK8ZuMvwHBLKp2"
+
+
+
+#endif
