@@ -359,6 +359,7 @@
         
     } failure:^(AFHTTPRequestOperation * operation, NSError * error) {
         [self.view makeToast:@"网络异常,请检测网络!"];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
@@ -403,21 +404,21 @@
 -(void)ddymAction
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    __weak FCXRefreshHeaderView *weakHeaderView = headerView;
+//    __weak FCXRefreshHeaderView *weakHeaderView = headerView;
     NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
     NSString *guserStr = [userDefaultes objectForKey:@"guser"];
     NSString *isloginidStr = [userDefaultes objectForKey:@"isloginid"];
     NSMutableDictionary *postDics  = [[NSMutableDictionary alloc]init];
     [postDics setObject:guserStr forKey:@"guser"];
     [postDics setObject:isloginidStr forKey:@"isloginid"];
-
+    [postDics setObject:APPKey forKey:@"key"];
     
     //服务器给的域名
     NSString *domainStr = [NSString stringWithFormat:@"%@%@",BaseUrl,@"ddme"];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager POST:domainStr parameters:postDics success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [weakHeaderView endRefresh];
+//        [weakHeaderView endRefresh];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         //json解析
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
@@ -439,6 +440,7 @@
         
     } failure:^(AFHTTPRequestOperation * operation, NSError * error) {
         [self.view makeToast:@"网络异常,请检测网络!"];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
@@ -689,10 +691,12 @@
                             else
                             {
                                 [self.view makeToast:@"服务器出错,请联系我们!"];
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                             }
                             
                         } failure:^(AFHTTPRequestOperation * operation, NSError * error) {
                             [self.view makeToast:@"网络异常,请检测网络!"];
+                             [MBProgressHUD hideHUDForView:self.view animated:YES];
                         }];
                     
                         

@@ -153,7 +153,7 @@
                     [self.TransferBtn setBackgroundColor:[UIColor grayColor]];
                     NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
                     if ([userDefaultes objectForKey:@"UIDArray"]) {
-                        NSMutableArray *UIDArray =  (NSMutableArray *)[userDefaultes objectForKey:@"UIDArray"];
+                        NSMutableArray *UIDArray =  [[userDefaultes objectForKey:@"UIDArray"] mutableCopy];
                         if (![UIDArray containsObject:self.UID]) {
                             [UIDArray addObject:self.UID];
                             [userDefaultes setObject:UIDArray forKey:@"UIDArray"];
