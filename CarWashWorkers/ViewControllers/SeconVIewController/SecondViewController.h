@@ -11,6 +11,7 @@
 #import "WashStyleChoose.h"
 #import "WashType.h"
 #import "TransferChoose.h"
+#import "UIButton+WebCache.h"
 
 @interface SecondViewController : UIViewController<LjjUISegmentedControlDelegate,WashStyleChooseDelegate,TransferChooseDelegate>
 

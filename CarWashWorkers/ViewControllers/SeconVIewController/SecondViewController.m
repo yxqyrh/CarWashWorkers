@@ -14,7 +14,7 @@
 #import "HeaderView.h"
 #import "SearchDataView.h"
 #import "PSTAlertController.h"
-
+#import "DateTools.h"
 
 
 @interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,FirstTableViewCellDelegate>
@@ -471,10 +471,13 @@
     [postDic1 setObject:isloginidStr forKey:@"isloginid"];
     
     [_startDate dateByAddingTimeInterval:-24 * 60 * 60];
-    NSTimeInterval kstime = [_startDate timeIntervalSince1970];
+    NSDate *ksDate = [NSDate dateWithYear:_startDate.year month:_startDate.month day:_startDate.day hour:0 minute:0 second:0];
+
+    NSTimeInterval kstime = [ksDate timeIntervalSince1970];
     [postDic1 setValue:[NSNumber numberWithInt:kstime] forKey:@"kstime"];
     
-    NSTimeInterval jstime = [_endDate timeIntervalSince1970];
+    NSDate *jsDate = [NSDate dateWithYear:_endDate.year month:_endDate.month day:_endDate.day hour:23 minute:59 second:59];
+    NSTimeInterval jstime = [jsDate timeIntervalSince1970];
     [postDic1 setValue:[NSNumber numberWithInt:jstime] forKey:@"jstime"];
     
      [postDic1 setObject:_selectWashType forKey:@"xcfs"];
@@ -554,7 +557,7 @@
     NSMutableDictionary *postDic  = [[NSMutableDictionary alloc]init];
     [postDic setObject:guserStr forKey:@"guser"];
     [postDic setObject:isloginidStr forKey:@"isloginid"];
-    [postDic setObject:[worker objectForKey:@"id"] forKey:@"gusera"];
+    [postDic setObject:[worker objectForKey:@"guser"] forKey:@"gusera"];
     [postDic setObject:[GlobalVar sharedSingleton].DDID forKey:@"id"];
     [postDic setObject:APPKey forKey:@"key"];
     //服务器给的域名
@@ -901,6 +904,7 @@
             }
             NSDictionary *dic = [dataArray objectAtIndex:indexPath.section];
             cell.LicensePlateLabel.text = [NSString stringWithFormat:@"车牌号：%@",[dic objectForKey:@"carnumber"]];
+            cell.CarPostionLabel.text = [NSString stringWithFormat:@"车位号：%@",[dic objectForKey:@"cwh"]];
             cell.CarWashLabel.text = [NSString stringWithFormat:@"洗车方式：%@",[dic objectForKey:@"methods"]];
             cell.LocationLabel.text = [NSString stringWithFormat:@"洗车地点：%@",[dic objectForKey:@"szdqstr"]];
             cell.NumberingLabel.text = [NSString stringWithFormat:@"洗车工编号：%@",[dic objectForKey:@"guser"]];
@@ -931,7 +935,7 @@
             cell.UID = [dic objectForKey:@"id"];
             NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
             if ([userDefaultes objectForKey:@"UIDArray"]) {
-                NSMutableArray *UIDArray =  (NSMutableArray *)[userDefaultes objectForKey:@"UIDArray"];
+                NSMutableArray *UIDArray =  [[userDefaultes objectForKey:@"UIDArray"] mutableCopy];
                 if ([UIDArray containsObject:cell.UID]) {
                     if (cell.ContainViewF.hidden==NO) {
                         cell.ContainViewF.hidden = YES;
@@ -941,6 +945,42 @@
                 }
             }
 
+            NSString *imgStr = [dic objectForKey:@"xc_picture"];
+            if (![imgStr isKindOfClass:[NSNull class]]) {
+                if (imgStr.length > 0) {
+                    imgArray = [imgStr componentsSeparatedByString:@"|"];
+                    
+//                    if ([jud isEqualToString:@"2"]) {
+                        switch (imgArray.count) {
+                            case 0:
+                            {
+                                cell.SecondImgBtn.hidden = YES;
+                                break;
+                            }
+                            case 1:
+                            {
+                                [cell.FirstImgBtn sd_setBackgroundImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",DownLoadImgUrl,[imgArray firstObject]]] forState:UIControlStateNormal];
+                                
+                                [cell.FirstImgBtn sd_setBackgroundImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",DownLoadImgUrl,[imgArray firstObject]]] forState:UIControlStateNormal completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                    [cell.btnImageDic setObject:image forKey:@1000];
+                                    NSDate * senddate=[NSDate date];
+                                    NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+                                    [dateformatter setDateFormat:@"YYYY-MM-dd-HH-mm-ss"];
+                                    NSString * morelocationString=[dateformatter stringFromDate:senddate];
+                                    [cell.ImgNameArray addObject:morelocationString];
+                                    
+                                }];
+                                
+                                
+                                break;
+                            }
+                            default:
+                                break;
+                                
+                        }
+//                    }
+                }
+            }
 
             //多线程请求
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -1046,6 +1086,7 @@
         }
         NSDictionary  *dic = [dataArray objectAtIndex:indexPath.section];
         cell.LicensePlateLabel.text = [NSString stringWithFormat:@"车牌号：%@",[dic objectForKey:@"carnumber"]];
+        cell.CarPostionLabel.text = [NSString stringWithFormat:@"车位号：%@",[dic objectForKey:@"cwh"]];
         cell.CarWashLabel.text = [NSString stringWithFormat:@"洗车方式：%@",[dic objectForKey:@"methods"]];
         cell.LocationLabel.text = [NSString stringWithFormat:@"洗车地点：%@",[dic objectForKey:@"szdqstr"]];
         cell.NumberingLabel.text = [NSString stringWithFormat:@"洗车工编号：%@",[dic objectForKey:@"guser"]];
@@ -1275,28 +1316,28 @@
     }
 
     if (Modules == 0) {
-        return 435;////
+        return 465;////
     }
     else if (Modules == 1)
     {
         switch (imgArray.count) {
             case 0:
-                return 185;
+                return 215;
                 break;
             case 1:
-                return 279;
+                return 309;
                 break;
             case 2:
-                return 279;
+                return 309;
                 break;
             case 3:
-                return 395;
+                return 425;
                 break;
             case 4:
-                return 395;
+                return 425;
                 break;
             default:
-                return 395;
+                return 425;
                 break;
         }
     }

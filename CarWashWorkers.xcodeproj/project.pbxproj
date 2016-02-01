@@ -130,6 +130,14 @@
 		4475ABFB1C54B68300F98099 /* YYCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4475ABF31C54B68300F98099 /* YYCycleScrollView.m */; };
 		4475ABFE1C54B77600F98099 /* WashType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4475ABFD1C54B77600F98099 /* WashType.m */; };
 		44D7B77A1C58ED2700EA91A2 /* GlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B7791C58ED2700EA91A2 /* GlobalVar.m */; };
+		44D7B78C1C5FA7F200EA91A2 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44D7B77C1C5FA7F200EA91A2 /* DateTools.bundle */; };
+		44D7B78D1C5FA7F200EA91A2 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B77F1C5FA7F200EA91A2 /* DTConstants.m */; };
+		44D7B78E1C5FA7F200EA91A2 /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B7811C5FA7F200EA91A2 /* DTError.m */; };
+		44D7B78F1C5FA7F200EA91A2 /* DTTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B7831C5FA7F200EA91A2 /* DTTimePeriod.m */; };
+		44D7B7901C5FA7F200EA91A2 /* DTTimePeriodChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B7851C5FA7F200EA91A2 /* DTTimePeriodChain.m */; };
+		44D7B7911C5FA7F200EA91A2 /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B7871C5FA7F200EA91A2 /* DTTimePeriodCollection.m */; };
+		44D7B7921C5FA7F200EA91A2 /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B7891C5FA7F200EA91A2 /* DTTimePeriodGroup.m */; };
+		44D7B7931C5FA7F200EA91A2 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D7B78B1C5FA7F200EA91A2 /* NSDate+DateTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,6 +350,22 @@
 		4475ABFD1C54B77600F98099 /* WashType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashType.m; sourceTree = "<group>"; };
 		44D7B7781C58ED2700EA91A2 /* GlobalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVar.h; sourceTree = "<group>"; };
 		44D7B7791C58ED2700EA91A2 /* GlobalVar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVar.m; sourceTree = "<group>"; };
+		44D7B77C1C5FA7F200EA91A2 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
+		44D7B77D1C5FA7F200EA91A2 /* DateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTools.h; sourceTree = "<group>"; };
+		44D7B77E1C5FA7F200EA91A2 /* DTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTConstants.h; sourceTree = "<group>"; };
+		44D7B77F1C5FA7F200EA91A2 /* DTConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTConstants.m; sourceTree = "<group>"; };
+		44D7B7801C5FA7F200EA91A2 /* DTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTError.h; sourceTree = "<group>"; };
+		44D7B7811C5FA7F200EA91A2 /* DTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTError.m; sourceTree = "<group>"; };
+		44D7B7821C5FA7F200EA91A2 /* DTTimePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriod.h; sourceTree = "<group>"; };
+		44D7B7831C5FA7F200EA91A2 /* DTTimePeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriod.m; sourceTree = "<group>"; };
+		44D7B7841C5FA7F200EA91A2 /* DTTimePeriodChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriodChain.h; sourceTree = "<group>"; };
+		44D7B7851C5FA7F200EA91A2 /* DTTimePeriodChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriodChain.m; sourceTree = "<group>"; };
+		44D7B7861C5FA7F200EA91A2 /* DTTimePeriodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriodCollection.h; sourceTree = "<group>"; };
+		44D7B7871C5FA7F200EA91A2 /* DTTimePeriodCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriodCollection.m; sourceTree = "<group>"; };
+		44D7B7881C5FA7F200EA91A2 /* DTTimePeriodGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriodGroup.h; sourceTree = "<group>"; };
+		44D7B7891C5FA7F200EA91A2 /* DTTimePeriodGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriodGroup.m; sourceTree = "<group>"; };
+		44D7B78A1C5FA7F200EA91A2 /* NSDate+DateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateTools.h"; sourceTree = "<group>"; };
+		44D7B78B1C5FA7F200EA91A2 /* NSDate+DateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateTools.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -768,6 +792,7 @@
 		0FBB5C361B7985C000D18487 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				44D7B77B1C5FA7F200EA91A2 /* DateTools */,
 				4475ABE11C54B68300F98099 /* popupViewController */,
 				4475ABD81C5481AF00F98099 /* PSTAlertController */,
 				0F29477D1BD61924008BDF05 /* MBProgressHUD */,
@@ -910,6 +935,29 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		44D7B77B1C5FA7F200EA91A2 /* DateTools */ = {
+			isa = PBXGroup;
+			children = (
+				44D7B77C1C5FA7F200EA91A2 /* DateTools.bundle */,
+				44D7B77D1C5FA7F200EA91A2 /* DateTools.h */,
+				44D7B77E1C5FA7F200EA91A2 /* DTConstants.h */,
+				44D7B77F1C5FA7F200EA91A2 /* DTConstants.m */,
+				44D7B7801C5FA7F200EA91A2 /* DTError.h */,
+				44D7B7811C5FA7F200EA91A2 /* DTError.m */,
+				44D7B7821C5FA7F200EA91A2 /* DTTimePeriod.h */,
+				44D7B7831C5FA7F200EA91A2 /* DTTimePeriod.m */,
+				44D7B7841C5FA7F200EA91A2 /* DTTimePeriodChain.h */,
+				44D7B7851C5FA7F200EA91A2 /* DTTimePeriodChain.m */,
+				44D7B7861C5FA7F200EA91A2 /* DTTimePeriodCollection.h */,
+				44D7B7871C5FA7F200EA91A2 /* DTTimePeriodCollection.m */,
+				44D7B7881C5FA7F200EA91A2 /* DTTimePeriodGroup.h */,
+				44D7B7891C5FA7F200EA91A2 /* DTTimePeriodGroup.m */,
+				44D7B78A1C5FA7F200EA91A2 /* NSDate+DateTools.h */,
+				44D7B78B1C5FA7F200EA91A2 /* NSDate+DateTools.m */,
+			);
+			path = DateTools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1005,6 +1053,7 @@
 				0F4BB6D21B832A5200E9B845 /* ThirdTableViewCell.xib in Resources */,
 				0F7F1B281B8C161600E7C3B7 /* SearchDataView.xib in Resources */,
 				4437B5BA1C58BE8F0097EEC5 /* TransferOperationCell.xib in Resources */,
+				44D7B78C1C5FA7F200EA91A2 /* DateTools.bundle in Resources */,
 				0FC99B211BC63B60000BAA8A /* PersonakInfoViewController.xib in Resources */,
 				3F1ACF251C5CEF94000A0DF6 /* EstimateTimeChoose.xib in Resources */,
 				0FCF8D7D1B85702300364518 /* HomeTableViewCell.xib in Resources */,
@@ -1056,6 +1105,7 @@
 				4475ABDF1C54B61C00F98099 /* WashStyleChoose.m in Sources */,
 				0F98C6661BA6F4C100584609 /* SDImageCache.m in Sources */,
 				0F7AC9A01B9D8490000DD4B4 /* Toast+UIView.m in Sources */,
+				44D7B78E1C5FA7F200EA91A2 /* DTError.m in Sources */,
 				0F98C6651BA6F4C100584609 /* NSData+ImageContentType.m in Sources */,
 				0FB2CF9A1B9E8AC8005063AA /* UIScrollView+FCXRefresh.m in Sources */,
 				0FCF8D751B8562CB00364518 /* ThirdViewController.m in Sources */,
@@ -1064,6 +1114,7 @@
 				4437B5B71C57C0B20097EEC5 /* TransferChoose.m in Sources */,
 				0F98C6641BA6F4C100584609 /* MKAnnotationView+WebCache.m in Sources */,
 				0F7AC9851B9D204E000DD4B4 /* AFURLResponseSerialization.m in Sources */,
+				44D7B78D1C5FA7F200EA91A2 /* DTConstants.m in Sources */,
 				0F7AC9831B9D204E000DD4B4 /* AFURLConnectionOperation.m in Sources */,
 				0F98C6721BA6F4C100584609 /* UIImageView+WebCache.m in Sources */,
 				0FCF8D6E1B85629600364518 /* InformationTableViewCell.m in Sources */,
@@ -1074,6 +1125,7 @@
 				0F7AC97F1B9D204E000DD4B4 /* AFHTTPRequestOperationManager.m in Sources */,
 				0F4BB6C21B8329FD00E9B845 /* FirstTableViewCell.m in Sources */,
 				0F7AC9921B9D2279000DD4B4 /* NetWorking.m in Sources */,
+				44D7B7921C5FA7F200EA91A2 /* DTTimePeriodGroup.m in Sources */,
 				0FB88B2D1BC768CB00E42D3A /* imageBig.m in Sources */,
 				0F98C6671BA6F4C100584609 /* SDWebImageCompat.m in Sources */,
 				0FB2CF971B9E8AC8005063AA /* FCXRefreshBaseView.m in Sources */,
@@ -1086,13 +1138,16 @@
 				0F11FA891B845A090032B847 /* HeaderView.m in Sources */,
 				0F7F1B261B8C160300E7C3B7 /* SearchDataView.m in Sources */,
 				0F5CEDEA1BA129940060BA34 /* FVCTabelModel.m in Sources */,
+				44D7B7931C5FA7F200EA91A2 /* NSDate+DateTools.m in Sources */,
 				0F98C66B1BA6F4C100584609 /* SDWebImageManager.m in Sources */,
 				0F98C6681BA6F4C100584609 /* SDWebImageDecoder.m in Sources */,
+				44D7B78F1C5FA7F200EA91A2 /* DTTimePeriod.m in Sources */,
 				0FB2CF991B9E8AC8005063AA /* FCXRefreshHeaderView.m in Sources */,
 				0F7AC9841B9D204E000DD4B4 /* AFURLRequestSerialization.m in Sources */,
 				0F7AC9811B9D204E000DD4B4 /* AFNetworkReachabilityManager.m in Sources */,
 				0FC99B251BC64E67000BAA8A /* ChangePasswordViewController.m in Sources */,
 				0FB2CF981B9E8AC8005063AA /* FCXRefreshFooterView.m in Sources */,
+				44D7B7911C5FA7F200EA91A2 /* DTTimePeriodCollection.m in Sources */,
 				0FBB5C151B7982CB00D18487 /* ViewControllers.m in Sources */,
 				0F98C6691BA6F4C100584609 /* SDWebImageDownloader.m in Sources */,
 				0F98C6731BA6F4C100584609 /* UIView+WebCacheOperation.m in Sources */,
@@ -1111,6 +1166,7 @@
 				0F7AC9801B9D204E000DD4B4 /* AFHTTPSessionManager.m in Sources */,
 				0F7AC98E1B9D204E000DD4B4 /* UIWebView+AFNetworking.m in Sources */,
 				0FBB5C0F1B7982CB00D18487 /* main.m in Sources */,
+				44D7B7901C5FA7F200EA91A2 /* DTTimePeriodChain.m in Sources */,
 				4475ABF81C54B68300F98099 /* LewPopupViewAnimationSpring.m in Sources */,
 				4475ABFB1C54B68300F98099 /* YYCycleScrollView.m in Sources */,
 				0F7AC9861B9D204E000DD4B4 /* AFURLSessionManager.m in Sources */,

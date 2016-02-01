@@ -45,11 +45,11 @@
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *cellIdentifier = @"CarNumChooseCell";
+    NSString *cellIdentifier = @"TransferCell";
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell==nil) {
-        cell= [[[NSBundle mainBundle]loadNibNamed:@"CarNumChooseCell" owner:nil options:nil] firstObject];
+        cell= [[[NSBundle mainBundle]loadNibNamed:@"TransferCell" owner:nil options:nil] firstObject];
     }
     UILabel *title = [cell viewWithTag:1];
     NSString *fs = _washTypeArray[indexPath.row];

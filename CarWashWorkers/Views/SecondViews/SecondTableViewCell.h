@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIView *ContView;
 /**车牌号 */
 @property (weak, nonatomic) IBOutlet UILabel *LicensePlateLabel;
+
+/**车牌号 */
+@property (weak, nonatomic) IBOutlet UILabel *CarPostionLabel;
 /**洗车方式 */
 @property (weak, nonatomic) IBOutlet UILabel *CarWashLabel;
 /**洗车地点 */

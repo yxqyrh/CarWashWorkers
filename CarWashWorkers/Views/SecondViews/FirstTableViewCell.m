@@ -18,11 +18,12 @@
     /**是否开始洗车 */
     BOOL IsStartWash;
     
-    /**存储图片DataArray */
-    NSMutableArray  *dataImgArray;
+//    /**存储图片DataArray */
+//    NSMutableArray  *dataImgArray;
     
-    /**存储图片名称DataArray */
-    NSMutableArray  *ImgNameArray;
+
+    
+  
 
 }
 - (void)awakeFromNib {
@@ -32,8 +33,10 @@
     [self.contView.layer setBorderWidth:0.8f];
     [self.contView.layer setBorderColor:whiteClocor.CGColor];
     self.contView.layer.cornerRadius = 5.0f;
-    dataImgArray = [[NSMutableArray alloc]init];
-    ImgNameArray = [[NSMutableArray alloc]init];
+    _dataImgArray = [[NSMutableArray alloc]init];
+    _ImgNameArray = [[NSMutableArray alloc]init];
+    
+    _btnImageDic = [NSMutableDictionary dictionary];
     
     //增加收拾
     
@@ -290,7 +293,7 @@
 //确定完成
 - (IBAction)SureBtnClick:(UIButton *)sender {
     
-    if(dataImgArray.count < 1)
+    if(_dataImgArray.count < 1)
     {
         [self.backGVC.view makeToast:@"请上传图片"];
         return ;
@@ -307,7 +310,7 @@
 -(void)alertView : (UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     
-    if (dataImgArray.count < 1 ){
+    if (_dataImgArray.count < 1 ){
         [self.backGVC.view makeToast:@"请添加图片"];
     }
     
@@ -343,13 +346,13 @@
     [manager POST:domainStr parameters:postDic constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
      {
          //_imageArray就是图片数组，我的_imageArray里面存的都是图片的data，下面可以直接取出来使用，如果存的是image，将image转换data的方法如下：NSData *imageData = UIImageJPEGRepresentation(image, 0.7);
-         if (dataImgArray.count > 0 ){
-             for(int i = 0;i < dataImgArray.count;i ++){
-                 NSData *data=dataImgArray[i];
+         if (_dataImgArray.count > 0 ){
+             for(int i = 0;i < _dataImgArray.count;i ++){
+                 NSData *data=_dataImgArray[i];
                  //上传的参数名
                  NSString *name = @"urlname[]";
                  
-                 NSString * morelocationString = [ImgNameArray objectAtIndex:i];
+                 NSString * morelocationString = [_ImgNameArray objectAtIndex:i];
                  
                  //上传的filename
                  NSString *fileName = [NSString stringWithFormat:@"%@.jpg",morelocationString];
@@ -515,12 +518,26 @@
         UIImage *imageNew = [self imageWithImage:image scaledToSize:imagesize];
         NSData *minDate = UIImageJPEGRepresentation(imageNew, 1);
         
-        [dataImgArray addObject:minDate];
         NSDate * senddate=[NSDate date];
         NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
         [dateformatter setDateFormat:@"YYYY-MM-dd-HH-mm-ss"];
         NSString * morelocationString=[dateformatter stringFromDate:senddate];
-        [ImgNameArray addObject:morelocationString];
+        
+        if (myActionSheet.tag == 1000) {
+            if (_dataImgArray.count == 0) {
+               [_dataImgArray addObject:minDate];
+                [_ImgNameArray addObject:morelocationString];
+            }
+            else {
+                [_dataImgArray replaceObjectAtIndex:0 withObject:minDate];
+                [_ImgNameArray replaceObjectAtIndex:0 withObject:morelocationString];
+            }
+        }
+        else {
+            [_dataImgArray addObject:minDate];
+            [_ImgNameArray addObject:morelocationString];
+        }
+      
         
         UIButton *btn = (UIButton *)[self.ContainViewS viewWithTag:myActionSheet.tag];
         [btn setBackgroundImage:imageNew forState:UIControlStateNormal];

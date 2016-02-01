@@ -23,6 +23,8 @@ typedef void(^tranferClickBlock)(void);
 @property (weak, nonatomic) IBOutlet UIView *contView;
 /**车牌号 */
 @property (weak, nonatomic) IBOutlet UILabel *LicensePlateLabel;
+/**车牌号 */
+@property (weak, nonatomic) IBOutlet UILabel *CarPostionLabel;
 /**洗车方式 */
 @property (weak, nonatomic) IBOutlet UILabel *CarWashLabel;
 /**洗车地点 */
@@ -54,12 +56,17 @@ typedef void(^tranferClickBlock)(void);
 @property (weak, nonatomic) IBOutlet UILabel *TimeLabel;
 /**第一张ImgBtn */
 @property (weak, nonatomic) IBOutlet UIButton *FirstImgBtn;
+
 /**第二张ImgBtn */
 @property (weak, nonatomic) IBOutlet UIButton *SecondImgBtn;
+
+
 /**第三张ImgBtn */
 @property (weak, nonatomic) IBOutlet UIButton *ThirdImgBtn;
+
 /**第四张ImgBtn */
 @property (weak, nonatomic) IBOutlet UIButton *FourImgBtn;
+
 /**联系车主Btn */
 @property (weak, nonatomic) IBOutlet UIButton *ContactBtn;
 /**订单转让Btn */
@@ -91,5 +98,12 @@ typedef void(^tranferClickBlock)(void);
 
 @property (nonatomic ,assign)id <FirstTableViewCellDelegate>delegate;
 
+@property (nonatomic, copy)NSMutableDictionary *btnImageDic;
+
+/**存储图片名称DataArray */
+@property (nonatomic, copy)NSMutableArray  *ImgNameArray;
+
+/**存储图片DataArray */
+@property (nonatomic, copy)NSMutableArray  *dataImgArray;
 
 @end
