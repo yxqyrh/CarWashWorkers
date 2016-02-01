@@ -65,9 +65,14 @@
     
     NSLog(@"uid----%@",self.UID);
     
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"是否确认接单?" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    alertView.tag = 121;
-    [alertView show];
+    EstimateTimeChoose *view = [EstimateTimeChoose defaultPopupView];
+    view.parentVC = _SVC;
+        view.delegate = self;
+    [_SVC  lew_presentPopupView:view animation:[LewPopupViewAnimationFade new] dismissed:^{
+        NSLog(@"动画结束");
+    }];
+//
+
     
     
 }
@@ -86,6 +91,8 @@
             [postDic setObject:isloginidStr forKey:@"isloginid"];
             [postDic setObject:self.UID forKey:@"id"];
             [postDic setObject:APPKey forKey:@"key"];
+            [postDic setObject:_yjxcsj forKey:@"yjxcsj"];
+            
             //服务器给的域名
             NSString *domainStr = [NSString stringWithFormat:@"%@%@",BaseUrl,@"jsdd"];
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -146,6 +153,16 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+
+
+
+-(void)setEstimateTimeChooseValue:(NSString *)value{
+    _yjxcsj = value;
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"是否确认接单?" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        alertView.tag = 121;
+        [alertView show];
 }
 
 @end

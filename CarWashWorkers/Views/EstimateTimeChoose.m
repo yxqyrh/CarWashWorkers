@@ -32,6 +32,7 @@
     dataArray = [[NSMutableArray alloc]initWithObjects:@"10分钟",@"25分钟",@"40分钟",@"60分钟",@"90分钟",@"大于120分钟", nil];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _current_seleted_row =-1;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     return self;
 }
@@ -80,13 +81,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     _current_seleted_row = indexPath.row;
     [_tableView reloadData];
-    
 }
 - (IBAction)ok:(id)sender {
+    if (_current_seleted_row==-1) {
+        [self makeToast:@"请选择预计到达时间"];
+        return;
+    }
     if (_delegate != nil && [_delegate conformsToProtocol:@protocol(EstimateTimeChooseDelegate)]) { // 如果协议响应了sendValue:方法
         // 通知执行协议方法
         
-        [_delegate setEstimateTimeChooseValue:_current_seleted_row];
+        [_delegate setEstimateTimeChooseValue:dataArray[_current_seleted_row]];
         [_parentVC lew_dismissPopupViewWithanimation:[LewPopupViewAnimationFade new]];
     }
 }

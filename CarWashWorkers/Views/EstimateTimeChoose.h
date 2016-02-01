@@ -14,7 +14,7 @@
 #import "LewPopupViewAnimationDrop.h"
 @protocol EstimateTimeChooseDelegate<NSObject> // 代理传值方法
 @required
-- (void)setEstimateTimeChooseValue:(int)index;
+- (void)setEstimateTimeChooseValue:(NSString*)value;
 @end
 
 @interface EstimateTimeChoose : UIView<UITableViewDataSource,UITableViewDelegate>
