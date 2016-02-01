@@ -1,18 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "465CFD5287EF22C4EF075DB108F179236B7BBEB8",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1D99A77B6ED35387F73B220B484AA3D76B029424",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "fa47d1ae-7689-4f42-9434-d27c615ced15++4033" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "465CFD5287EF22C4EF075DB108F179236B7BBEB8" : 0,
+    "1D99A77B6ED35387F73B220B484AA3D76B029424" : 0,
     "E0647A72A0C1C9D78EA44BB29D90BA7E6B16FC32" : 0,
     "fa47d1ae-7689-4f42-9434-d27c615ced15++4033" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1F67E2D8-6866-41F9-A258-EA677CCE4C68",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "465CFD5287EF22C4EF075DB108F179236B7BBEB8" : "CarWashWorkers\/",
+    "1D99A77B6ED35387F73B220B484AA3D76B029424" : "CarWashWorkers\/",
     "E0647A72A0C1C9D78EA44BB29D90BA7E6B16FC32" : "CarWashWorkers%202\/CarWashWorkers\/Commin\/LjjUISegmentedControl\/",
     "fa47d1ae-7689-4f42-9434-d27c615ced15++4033" : "CarWashWorkers%202\/CarWashWorkers\/Thirdparty\/MBProgressHUD\/"
   },
@@ -23,7 +23,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yxqyrh\/washworkers.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "465CFD5287EF22C4EF075DB108F179236B7BBEB8"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1D99A77B6ED35387F73B220B484AA3D76B029424"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jokeface\/LjjUISegmentedControl.git",

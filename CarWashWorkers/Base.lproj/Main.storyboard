@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HjZ-fW-8Ur">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HjZ-fW-8Ur">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -445,7 +445,7 @@
                                     <constraint firstAttribute="trailing" secondItem="TG9-4V-zgO" secondAttribute="trailing" constant="20" id="PlO-he-T7q"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOe-Bn-dpC">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOe-Bn-dpC">
                                 <rect key="frame" x="0.0" y="113" width="320" height="406"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTu-oe-tda" customClass="UIControl">
@@ -805,7 +805,7 @@
     </scenes>
     <resources>
         <image name="downbt" width="20" height="10"/>
-        <image name="headerImage" width="20" height="20"/>
+        <image name="headerImage" width="182" height="182"/>
         <image name="icon-jt011" width="16" height="16"/>
         <image name="lock" width="48" height="76"/>
         <image name="logoicon" width="512" height="512"/>
