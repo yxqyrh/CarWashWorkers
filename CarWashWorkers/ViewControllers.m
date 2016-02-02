@@ -259,7 +259,7 @@
                     [manager POST:domainStr12 parameters:postDics10 success:^(AFHTTPRequestOperation *operation, id responseObject) {
                         //json解析
                         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-//                        NSLog(@"接单列表-----:%@",resultDic);
+                        DLog(@"接单列表-----:%@",resultDic);
                         if (resultDic.count > 0) {
                             DataArray = [resultDic objectForKey:@"list"];
                             if ([DataArray isKindOfClass:[NSNull class]]) {
@@ -660,6 +660,7 @@
                             [MBProgressHUD hideHUDForView:self.view animated:YES];
                             //json解析
                             NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+                            DLog(@"接单列表-----:%@",resultDic);
                             if (resultDic.count > 0) {
                                 DataArray = [resultDic objectForKey:@"list"];
                                 if ([DataArray isKindOfClass:[NSNull class]]) {
@@ -825,7 +826,7 @@
             //json解析
             [weakFooterView endRefresh];
             NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-            NSLog(@"加载更多接单列表-----:%@",resultDic);
+            DLog(@"加载更多接单列表-----:%@",resultDic);
             if (resultDic.count > 0) {
                 NSMutableArray *TemporaryArray = [resultDic objectForKey:@"list"];
                 if ([TemporaryArray isKindOfClass:[NSNull class]]) {
@@ -894,6 +895,7 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         //json解析
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        DLog(@"resultDic:%@",resultDic);
         if (resultDic.count > 0) {
             DataArray = [resultDic objectForKey:@"list"];
             if ([DataArray isKindOfClass:[NSNull class]]) {
