@@ -160,9 +160,70 @@
 
 -(void)setEstimateTimeChooseValue:(NSString *)value{
     _yjxcsj = value;
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"是否确认接单?" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        alertView.tag = 121;
+    [self.SVC.view makeToastActivity];
+    NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
+    NSString *guserStr = [userDefaultes objectForKey:@"guser"];
+    NSString *isloginidStr = [userDefaultes objectForKey:@"isloginid"];
+    
+    NSMutableDictionary *postDic  = [[NSMutableDictionary alloc]init];
+    [postDic setObject:guserStr forKey:@"guser"];
+    [postDic setObject:isloginidStr forKey:@"isloginid"];
+    [postDic setObject:self.UID forKey:@"id"];
+    [postDic setObject:APPKey forKey:@"key"];
+    [postDic setObject:_yjxcsj forKey:@"yjxcsj"];
+    
+    //服务器给的域名
+    NSString *domainStr = [NSString stringWithFormat:@"%@%@",BaseUrl,@"jsdd"];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager POST:domainStr parameters:postDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.SVC.view hideToastActivity];
+        //json解析
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"点击接受订单------%@",resultDic);
+        if (resultDic.count > 0) {
+            NSInteger res = [[resultDic objectForKey:@"res"] integerValue];
+            switch (res) {
+                case 1:
+                {
+                    [self.SVC.view makeToast:@"订单ID错误!"];
+                }
+                    break;
+                case 2:
+                {
+                    [self.SVC.view makeToast:@"接单失败!"];
+                }
+                    break;
+                case 3:
+                {
+                    [_delegate CompletionOfOrders];
+                    [self.SVC.tabBarController setSelectedIndex:1];
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"服务器出错,请联系我们!" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alertView show];
+        }
+        
+    } failure:^(AFHTTPRequestOperation * operation, NSError * error) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"网络异常,请检测网络!" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
         [alertView show];
+        
+    }];
+    
+
+    
+//        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"是否确认接单?" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//        alertView.tag = 121;
+//        [alertView show];
 }
+
+
 
 @end
