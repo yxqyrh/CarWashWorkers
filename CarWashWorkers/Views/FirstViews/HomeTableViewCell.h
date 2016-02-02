@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EstimateTimeChoose.h"
 
 @protocol HomeTableViewCellDelegate <NSObject>
 
@@ -17,7 +17,7 @@
 
 
 
-@interface HomeTableViewCell : UITableViewCell<UIAlertViewDelegate>
+@interface HomeTableViewCell : UITableViewCell<UIAlertViewDelegate,EstimateTimeChooseDelegate>
 /**内容view */
 @property (weak, nonatomic) IBOutlet UIView *containerVIew;
 /**车牌号label */
@@ -41,6 +41,7 @@
 @property (nonatomic,strong)UITableView *tabel;
 
 @property (nonatomic,copy)NSString *CountdownTime;
+@property (nonatomic,copy)NSString *yjxcsj;
 
 @property (nonatomic,strong)UIViewController *SVC;
 @property (nonatomic ,assign)id <HomeTableViewCellDelegate	>delegate;
