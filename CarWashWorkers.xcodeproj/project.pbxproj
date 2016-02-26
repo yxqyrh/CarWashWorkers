@@ -1324,8 +1324,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Anhui Xiaodian Network Technology Co., Ltd. (4ZEJ9J7BRC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Anhui Xiaodian Network Technology Co., Ltd. (4ZEJ9J7BRC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CarWashWorkers/CarWashWorkers.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/CarWashWorkers/Thirdparty/apns/libGeTuiSdk-1.2.1.a";
